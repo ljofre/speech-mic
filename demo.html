@@ -10,48 +10,48 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 <html>
 <head>
   <title>speech-mic</title>
-  
-  <script src="../webcomponentsjs/webcomponents.js"></script>
+
+  <script src="./bower_components/webcomponentsjs/webcomponents.min.js"></script>
   <link rel="import" href="speech-mic.html">
-  
+
   <style>
-  
+
     section {
       padding: 30px;
     }
-  
+
     input {
       height: 40px;
       width: 200px;
       margin-right: 20px;
       font-size: 16px;
     }
-    
+
   </style>
-  
+
 </head>
 <body unresolved>
 
   <br><br>
-  
+
   <div horizontal center layout>
 
     <input id="speechInput">
-  
+
     <speech-mic id="speechMic"></speech-mic>
-  
+
   </div>
-  
+
   <script>
-  
+
     var speechInput = document.querySelector('#speechInput');
     var speechMic = document.querySelector('#speechMic');
-  
+
     speechMic.addEventListener('speech-mic-result', function(e) {
       speechInput.value = e.detail.transcript;
     });
-    
+
   </script>
-  
+
 </body>
 </html>
